@@ -28,6 +28,7 @@ const registroCliente = async (req, res) => {
 
   const data = await resp.json();
 
+  console.log("Respuesta reCAPTCHA:", data);
 
   if (!data.success) {
     return res.status(400).json({
@@ -49,6 +50,7 @@ const registroCliente = async (req, res) => {
     message: "Usuario registrado correctamente."
   });
 };
+
 
 const RegisterAdminUser = async (req, res) => {
   const {
@@ -74,3 +76,5 @@ const RegisterAdminUser = async (req, res) => {
 
 }
 export { registroCliente, RegisterAdminUser };
+
+export {registroCliente};
