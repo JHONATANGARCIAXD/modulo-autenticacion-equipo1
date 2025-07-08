@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const SECRET_KEY = process.env.RECAPTCHA_SECRET;
-
 const registroCliente = async (req, res) => {
   const {
     Name,
@@ -28,6 +27,7 @@ const registroCliente = async (req, res) => {
   );
 
   const data = await resp.json();
+
   console.log("Respuesta reCAPTCHA:", data);
 
   if (!data.success) {
@@ -50,5 +50,31 @@ const registroCliente = async (req, res) => {
     message: "Usuario registrado correctamente."
   });
 };
+
+
+const RegisterAdminUser = async (req, res) => {
+  const {
+    Name,
+    Email,
+    Password,
+    ConfirmPassword,
+    Rol
+  } = req.body
+
+  const registro1 = registro({
+    nombre: Name,
+    correo: Email,
+    contraseña: Password,
+    confirmcontraseña: ConfirmPassword,
+    rol: Rol
+  });
+
+  await registro1.save();
+  return res.status(201).json({
+    message: "Usuario registrado correctamente."
+  });
+
+}
+export { registroCliente, RegisterAdminUser };
 
 export {registroCliente};
