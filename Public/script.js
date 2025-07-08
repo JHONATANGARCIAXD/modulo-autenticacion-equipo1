@@ -15,7 +15,6 @@ document.getElementById("register").addEventListener("click", async (e) => {
     }
 });
 
-
 const Password = document.getElementById("Contraseña")
 const ConfirmarContraseña = document.getElementById("ConfirmarContraseña")
 const eye = document.getElementById("eye")
@@ -43,8 +42,6 @@ eye2.addEventListener("click", () => {
         ConfirmarContraseña.type = "password"
     }
 });
-
-
 
 const register = async (Name, Email, Password, Token) => {
     try {
@@ -198,6 +195,8 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
     else {
         valido = true
     }
+
+}
 }
 }
 

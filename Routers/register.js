@@ -1,14 +1,9 @@
 import { Router } from "express";
 import { check } from 'express-validator';
 import { validarCampos } from "../Helpers/ValidationResult.js"
-
 import { RegisterAdminUser,registroCliente } from "../Controllers/register.js";
 import { validarJWT } from "../Middlewares/validar_jwt.js";
 import { ValidateUserExists } from "../Helpers/ValidationRegister.js";
-
-import { ValidateUserExists } from "../Helpers/Register.js";
-import { registroCliente } from "../Controllers/Register.js";
-
 
 const router = Router();
 

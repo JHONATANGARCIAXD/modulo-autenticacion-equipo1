@@ -11,26 +11,17 @@ const app = express();
 dotenv.config();
 app.use(cors());
 
-
 app.use(express.json());
 app.use("/api", rutas_registro);
 app.use("/apiLogin", login)
-
-console.log("Clave secreta:", process.env.RECAPTCHA_SECRET);
-
-app.use(express.json());
-app.use("/api", rutas_registro);
-
+app.use("/das", dash)
 app.use(express.static("public"));
-
+ 
 mongoose.connect(process.env.MONGODB_CNX)
   .then(() => console.log("se conectó a MongoDB"))
   .catch(err => console.error("Error al conectar a MongoDB:", err));
-
+ 
 app.listen(3001, () => {
-
   console.log(`prendido http://localhost:3001/Register/index.html`);
-
-  console.log(`prendido http://localhost:3001/index.html`);
-
 });
+      
