@@ -15,6 +15,34 @@ document.getElementById("register").addEventListener("click", async (e) => {
     }
 });
 
+const Password = document.getElementById("Contraseña")
+const ConfirmarContraseña = document.getElementById("ConfirmarContraseña")
+const eye = document.getElementById("eye")
+const eye2 = document.getElementById("eye2")
+eye.addEventListener("click", () => {
+    if (Password.type == "password") {
+        Password.type = "text"
+        eye.classList.remove("bi-eye");
+        eye.classList.add("bi-eye-slash")
+    } else {
+        eye.classList.remove("bi-eye-slash");
+        eye.classList.add("bi-eye");
+        Password.type = "password"
+    }
+});
+
+eye2.addEventListener("click", () => {
+    if (ConfirmarContraseña.type == "password") {
+        ConfirmarContraseña.type = "text"
+        eye2.classList.remove("bi-eye");
+        eye2.classList.add("bi-eye-slash")
+    } else {
+        eye2.classList.remove("bi-eye-slash");
+        eye2.classList.add("bi-eye");
+        ConfirmarContraseña.type = "password"
+    }
+});
+
 const register = async (Name, Email, Password, Token) => {
     try {
         const response = await fetch("http://localhost:3001/api/registro", {
@@ -169,3 +197,7 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
     }
 
 }
+}
+}
+
+
