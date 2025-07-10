@@ -43,6 +43,8 @@ eye2.addEventListener("click", () => {
     }
 });
 
+
+
 const register = async (Name, Email, Password, Token) => {
     try {
         const response = await fetch("http://localhost:3001/api/registro", {
@@ -67,9 +69,6 @@ const register = async (Name, Email, Password, Token) => {
                     html: data.errors[0].msg,
                     icon: "error",
                     confirmButtonColor: '#ffdf00',
-
-                    icon: "error"
-
                 });
             }
 
@@ -97,7 +96,6 @@ const register = async (Name, Email, Password, Token) => {
             icon: 'error',
             title: 'Error en el registro',
             confirmButtonColor: '#ffdf00',
-
             text: error.message
         });
         grecaptcha.reset();
@@ -118,7 +116,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             title: "CAMPO VACIO",
             text: "COMPLETA EL CAMPO NOMBRE",
             confirmButtonColor: '#ffdf00',
-
         });
     }
 
@@ -152,7 +149,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "La contraseña debe incluir mayusculas",
             confirmButtonColor: '#ffdf00',
-
         });
     }
 
@@ -161,7 +157,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "La contraseña debe incluir caracteres especiales",
             confirmButtonColor: 'v#ffdf00',
-
         });
     }
 
@@ -170,7 +165,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "La contraseña debe incluir minusculas",
             confirmButtonColor: '#ffdf00',
-
         });
     }
 
@@ -179,7 +173,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "La contraseña debe incluir numeros",
             confirmButtonColor: '#ffdf00',
-
         });
     }
 
@@ -188,7 +181,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "Las contraseñas no coinciden",
             confirmButtonColor: '#ffdf00',
-
         });
     }
 
@@ -197,7 +189,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "Falta reCAPTCHA",
             confirmButtonColor: '#ffdf00',
-
             text: "Por favor marca el reCAPTCHA antes de continuar"
         });
     }
@@ -207,7 +198,6 @@ const validations = (Name, Email, Password, ConfirmPassword, Token, TerminosAcep
             icon: "error",
             title: "Debes aceptar los términos y condiciones",
             confirmButtonColor: '#ffdf00',
-
             text: "Marca la casilla para continuar con el registro"
         });
     }

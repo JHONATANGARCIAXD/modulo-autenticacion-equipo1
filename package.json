@@ -16,6 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "keinner oscar jhonatan duban",
+
   "license": "ISC",
   "description": ""
 }

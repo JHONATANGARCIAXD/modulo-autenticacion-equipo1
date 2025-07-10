@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     title: "Las contraseñas no coinciden",
                 });
             }
+
             else if (password == "" || confirmPassword == "") {
                 return Swal.fire({
                     icon: "error",

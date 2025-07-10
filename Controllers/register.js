@@ -28,7 +28,6 @@ const registroCliente = async (req, res) => {
 
   const data = await resp.json();
 
-
   if (!data.success) {
     return res.status(400).json({
       message: `Verificación reCAPTCHA fallida. Código(s): ${data["error-codes"]?.join(", ")}`
@@ -49,6 +48,7 @@ const registroCliente = async (req, res) => {
     message: "Usuario registrado correctamente."
   });
 };
+
 
 const RegisterAdminUser = async (req, res) => {
   const {

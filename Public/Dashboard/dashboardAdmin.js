@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     confirmButtonColor: 'ffdf00'
                 });
             }
+
             else if (password == "" || confirmPassword == "") {
                 return Swal.fire({
                     icon: "error",
